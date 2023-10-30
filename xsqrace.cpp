@@ -1,7 +1,5 @@
 /*
-Name: MATHEWS, Noel
-SID: 1155130840
-e-mail: 1155130840@link.cuhk.edu.hk
+By: mathewn24
 */
 
 #include <iostream>
@@ -117,6 +115,9 @@ int main() {
             }
       }
 
+      //std::cout << "b_h_dist: " << h_dist << ", hi: " << hi << ", hj: " << hj << endl;
+      //std::cout << "b_c_dist: " << c_dist << ", ci: " << ci << ", cj: " << cj << endl;
+
       // Adjust H's location (hi, hj) based on its distance away from the start.
       if (h_dist < n)
       {  
@@ -153,6 +154,7 @@ int main() {
          int c_diff = c_dist - n;
          ci = (n-1) - c_diff;
          cj = ci;
+         //std::cout << "c_diff: " << c_diff << endl;
 
       } else if (c_dist > (2*n-2))
       {
@@ -161,8 +163,13 @@ int main() {
          c_delta = c_dist - (2*n-2) + 1;
          ci = 1;
          cj = c_delta;
+         //std::cout << "c_delta: " << c_delta << endl;
       }
       
+
+      //std::cout << "h_dist: " << h_dist << ", hi: " << hi << ", hj: " << hj << endl;
+      //std::cout << "c_dist: " << c_dist << ", ci: " << ci << ", cj: " << cj << endl;
+
       if ((h_dist >= win) || (c_dist >= win)){
          std::cout << "Game over!" << std::endl;
          if (h_dist >= win)
